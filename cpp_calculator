@@ -1,0 +1,46 @@
+#include <iostream>
+#include <stdlib.h>
+
+// $cal 1+1
+// argc : 4
+// argv[0] : cal
+// agrv[1] : 1
+// argv[2] : *
+// argv[3] : 1 
+
+int main(int argc, char *argv[])
+{
+    int a, b;
+    double c, d;
+
+    if (argc != 4)
+    {
+        printf("error not argc : 4 %d\n", argc);
+        exit(-1); // 0:정상종료, -1:비정상종료
+    }
+    a = atoi(argv[1]); // atoi : ascii to int 변환
+    b = atoi(argv[3]); // cal 1 + 1, 3번째 자리?
+    c = atoi(argv[1]); // atoi : ascii to int 변환
+    d = atoi(argv[3]); // cal 1 + 1, 3번째 자리?
+    
+    switch (*argv[2])  //  
+    {
+    case '+':
+        printf("%d + %d = %d\n", a, b, a+b);
+        break;
+
+    case '-':
+        printf("%d - %d = %d\n", a, b, a-b);
+        break;
+
+    case 'x':
+        printf("%d x %d = %d\n", a, b, a*b);
+        break;
+
+    case '/':
+        printf("%.2lf / %.2lf = %.2lf\n", c, d, c/d);
+        break;
+    
+    default:
+        break;
+    }
